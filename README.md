@@ -1,18 +1,18 @@
-# react-videojs
+# react-videojs-wrapper
 
 React wrapper for VideoJS
 
 ## Install
 
 ```
-npm install --save react-videojs
+npm install --save react-videojs-wrapper
 ```
 
 ## Usage
 
 ```javascript
 import React, { Component } from 'react';
-import VideoPlayer from 'react-videojs';
+import VideoPlayer from 'react-videojs-wrapper';
 
 class VideoApp extends Component {
   player = {};
