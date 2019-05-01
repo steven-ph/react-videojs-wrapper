@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Controls from './Controls.json';
 import videojs from 'video.js';
 import 'video.js/dist/video-js.css';
+import './index.css';
+require('silvermine-videojs-quality-selector')(videojs);
 
 class VideoPlayer extends Component {
   playerId = `video-player-${new Date() * 1}`;
@@ -30,6 +32,7 @@ class VideoPlayer extends Component {
       document.querySelector(`#${this.playerId}`),
       playerOptions
     );
+    this.player.controlBar.addChild('QualitySelector');
     this.player.src(props.src);
     this.player.poster(props.poster);
     this.setControlsVisibility(this.player, props.hideControls);

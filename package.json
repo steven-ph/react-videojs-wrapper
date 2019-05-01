@@ -1,6 +1,6 @@
 {
   "name": "react-videojs-wrapper",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React wrapper for VideoJS",
   "homepage": "https://github.com/steven-ph/react-videojs-wrapper#readme",
   "repository": "https://github.com/steven-ph/react-videojs-wrapper",
@@ -22,6 +22,7 @@
   "dependencies": {
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
+    "silvermine-videojs-quality-selector": "^1.1.2",
     "video.js": "^7.5.4",
     "webpack": "^4.26.1"
   },

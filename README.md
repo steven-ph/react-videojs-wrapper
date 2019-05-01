@@ -76,6 +76,33 @@ class VideoApp extends Component {
 export default VideoApp;
 ```
 
+### Providing video sources
+
+Sources can be provided via the `src` function on the instance of a `video.js` player.
+
+#### Using `player.src()`
+
+```js
+player.src([
+  {
+    src: 'https://example.com/video_720.mp4',
+    type: 'video/mp4',
+    label: '720P'
+  },
+  {
+    src: 'https://example.com/video_480.mp4',
+    type: 'video/mp4',
+    label: '480P',
+    selected: true
+  },
+  {
+    src: 'https://example.com/video_360.mp4',
+    type: 'video/mp4',
+    label: '360P'
+  }
+]);
+```
+
 ### VideoJS APIs support:
 
 > onReady will return <code>videojs</code> instance. Which means you can use all the APIs provided by VideoJS.<br/>[List of VideoJS APIs](https://docs.videojs.com/docs/api/player.html)
