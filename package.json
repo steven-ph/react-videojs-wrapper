@@ -1,6 +1,6 @@
 {
   "name": "react-videojs-wrapper",
-  "version": "0.0.3",
+  "version": "1.0.3",
   "description": "React wrapper for VideoJS",
   "homepage": "https://github.com/steven-ph/react-videojs-wrapper#readme",
   "repository": "https://github.com/steven-ph/react-videojs-wrapper",
@@ -17,11 +17,11 @@
   "author": "Steven Phan",
   "license": "MIT",
   "peerDependencies": {
-    "react": "^16.8.6"
+    "react": "^16.6.3"
   },
   "dependencies": {
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.3",
     "silvermine-videojs-quality-selector": "^1.1.2",
     "video.js": "^7.5.4",
     "webpack": "^4.26.1"

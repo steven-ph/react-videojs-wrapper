@@ -1,8 +1,8 @@
 {
   "play": "playToggle",
-  "volume": "volumePanel",
+  "playbackrates": "playbackRateMenuButton",
   "seekbar": "progressControl",
   "timer": "remainingTimeDisplay",
-  "playbackrates": "playbackRateMenuButton",
+  "volume": "volumePanel",
   "fullscreen": "fullscreenToggle"
 }
