@@ -6109,7 +6109,7 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
-"video.js@^6.8.0 || ^7.0.0", video.js@^7.5.4:
+"video.js@^5.19.2 || ^6 || ^7", "video.js@^6.8.0 || ^7.0.0", video.js@^7.5.4:
   version "7.5.4"
   resolved "https://registry.yarnpkg.com/video.js/-/video.js-7.5.4.tgz#7c76d44123be48f98333ab50b19d7683bfa8aba6"
   integrity sha512-+U3FyLVFbnJdEC6TVMv8U75c8VM00vmVY8TSfFthnvo7/6rz3LFg2Pd3TTGNbV2pEmBhkLLYO+dvmqMNUyc2ZA==
@@ -6128,6 +6128,14 @@ videojs-font@3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/videojs-font/-/videojs-font-3.1.0.tgz#ac33be9b517fe19299f61cccd2b3c7d75a1c6960"
   integrity sha512-rxB68SVgbHD+kSwoNWNCHicKJuR2ga3bGfvGxmB+8fupsiLbnyCwTBVtrZUq4bZnD64mrKP1DxHiutxwrs59pQ==
+
+videojs-seek-buttons@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/videojs-seek-buttons/-/videojs-seek-buttons-1.5.0.tgz#c4858d738fac83f05e0d6a929f1d9ec13cdc91fa"
+  integrity sha512-X9d4dIngPBA2c0rQ+ap8nVqtDDR8VPi89MUS6RIKyR8TymM/IfAJz+A/vvyeAx2Hiv68elaCse+TV1H9bzv9Rw==
+  dependencies:
+    global "^4.3.2"
+    video.js "^5.19.2 || ^6 || ^7"
 
 videojs-vtt.js@0.14.1:
   version "0.14.1"

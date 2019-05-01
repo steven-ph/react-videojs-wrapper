@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Controls from './Controls.json';
 import videojs from 'video.js';
+import Controls from './Controls.json';
 import 'video.js/dist/video-js.css';
+import 'videojs-seek-buttons/dist/videojs-seek-buttons.css';
 import './index.css';
+import { playerPropTypes, defaultPlayerProps } from './VideoPlayerProps';
+
 require('silvermine-videojs-quality-selector')(videojs);
+require('videojs-seek-buttons');
 
 class VideoPlayer extends Component {
   playerId = `video-player-${new Date() * 1}`;
@@ -36,6 +39,10 @@ class VideoPlayer extends Component {
     this.player.src(props.src);
     this.player.poster(props.poster);
     this.setControlsVisibility(this.player, props.hideControls);
+    this.player.seekButtons({
+      forward: 15,
+      back: 15
+    });
   }
 
   generatePlayerOptions(props) {
@@ -58,11 +65,11 @@ class VideoPlayer extends Component {
     return playerOptions;
   }
 
-  setControlsVisibility(player, hidden_controls) {
+  setControlsVisibility(player, hiddenControls) {
     Object.keys(Controls).map(x => {
       player.controlBar[Controls[x]].show();
     });
-    hidden_controls.map(x => {
+    hiddenControls.map(x => {
       player.controlBar[Controls[x]].hide();
     });
   }
@@ -119,47 +126,11 @@ class VideoPlayer extends Component {
 }
 
 VideoPlayer.propTypes = {
-  src: PropTypes.string,
-  poster: PropTypes.string,
-  controls: PropTypes.bool,
-  autoplay: PropTypes.bool,
-  preload: PropTypes.oneOf(['auto', 'none', 'metadata']),
-  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  height: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  hideControls: PropTypes.arrayOf(PropTypes.string),
-  bigPlayButton: PropTypes.bool,
-  bigPlayButtonCentered: PropTypes.bool,
-  onReady: PropTypes.func,
-  onPlay: PropTypes.func,
-  onPause: PropTypes.func,
-  onTimeUpdate: PropTypes.func,
-  onSeeking: PropTypes.func,
-  onSeeked: PropTypes.func,
-  onEnd: PropTypes.func,
-  playbackRates: PropTypes.arrayOf(PropTypes.number),
-  hidePlaybackRates: PropTypes.bool,
-  className: PropTypes.string
+  ...playerPropTypes
 };
 
 VideoPlayer.defaultProps = {
-  src: '',
-  poster: '',
-  controls: true,
-  autoplay: false,
-  preload: 'auto',
-  playbackRates: [0.5, 1, 1.5, 2],
-  hidePlaybackRates: false,
-  className: '',
-  hideControls: [],
-  bigPlayButton: true,
-  bigPlayButtonCentered: true,
-  onReady: () => {},
-  onPlay: () => {},
-  onPause: () => {},
-  onTimeUpdate: () => {},
-  onSeeking: () => {},
-  onSeeked: () => {},
-  onEnd: () => {}
+  ...defaultPlayerProps
 };
 
 export default VideoPlayer;
