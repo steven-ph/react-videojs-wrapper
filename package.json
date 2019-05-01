@@ -1,0 +1,44 @@
+{
+  "name": "react-videojs-wrapper",
+  "version": "0.0.1",
+  "description": "React wrapper for VideoJS",
+  "homepage": "https://github.com/steven-ph/react-videojs-wrapper#readme",
+  "repository": "https://github.com/steven-ph/react-videojs-wrapper",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "webpack --watch --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "react-videojs-wrapper",
+    "react",
+    "videojs"
+  ],
+  "author": "Steven Phan",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.8.6"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "video.js": "^7.5.4",
+    "webpack": "^4.26.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "image-webpack-loader": "^4.5.0",
+    "node-sass": "^4.9.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack-cli": "^3.1.2"
+  }
+}
