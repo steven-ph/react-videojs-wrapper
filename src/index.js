@@ -39,10 +39,6 @@ class VideoPlayer extends Component {
     this.player.src(props.src);
     this.player.poster(props.poster);
     this.setControlsVisibility(this.player, props.hideControls);
-    this.player.seekButtons({
-      forward: 15,
-      back: 15
-    });
   }
 
   generatePlayerOptions(props) {
