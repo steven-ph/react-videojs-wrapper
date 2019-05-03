@@ -31,10 +31,7 @@ class VideoPlayer extends Component {
 
   initPlayer(props) {
     const playerOptions = this.generatePlayerOptions(props);
-    this.player = videojs(
-      document.querySelector(`#${this.playerId}`),
-      playerOptions
-    );
+    this.player = videojs(this.videoNode, playerOptions);
     this.player.controlBar.addChild('QualitySelector');
     this.player.src(props.src);
     this.player.poster(props.poster);
@@ -77,7 +74,6 @@ class VideoPlayer extends Component {
 
     this.player.ready(() => {
       props.onReady(this.player);
-      window.player = this.player;
     });
     this.player.on('play', () => {
       props.onPlay(this.player.currentTime());
@@ -111,12 +107,14 @@ class VideoPlayer extends Component {
 
   render() {
     return (
-      <video
-        id={this.playerId}
-        className={`video-js ${
-          this.props.bigPlayButtonCentered ? 'vjs-big-play-centered' : ''
-        } ${this.props.className}`}
-      />
+      <div data-vjs-player>
+        <video
+          ref={node => (this.videoNode = node)}
+          className={`video-js ${
+            this.props.bigPlayButtonCentered ? 'vjs-big-play-centered' : ''
+          } ${this.props.className}`}
+        />
+      </div>
     );
   }
 }
